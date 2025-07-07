@@ -1,15 +1,17 @@
 # minishell
 Our own terminal 42 project.
 
-# TODO
+# TO DO
+
+##Subject
 - [ ]Entrada
 - [ ]Historial
 - [ ]Global de la senyal
 - [ ]Redirecciones
-- [ ]
 - [ ]Pipes |
 - [ ]Entorno
 - [ ]$?
+- [ ]
 ## Interactivos
 - [ ]cntr-C
 - [ ]cntr-D
@@ -22,6 +24,16 @@ Our own terminal 42 project.
 - [ ]unset
 - [ ]env
 - [ ]exit
+## Isdefinition
+Son funciones que comprueban y devuelven booleanos.
+- [x]metacharacter
+- [ ]word
+- [ ]token
+- [ ]filename
+- [x]blank
+- [x]whitespace
+- [ ]Control operator
+- [ ]Redirection operator
 ## Extras
 - [ ]&&
 - [ ]||

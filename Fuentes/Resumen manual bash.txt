@@ -1,0 +1,38 @@
+Capitulo 1
+
+Shell es tanto un interpretador de comandos como un idioma de programacion.
+
+Otros shells:
+sh
+ksh
+csh
+bash
+
+2 modos:
+Interactivo: Acepta input escrito en el teclado.
+No interactivo: Ejecuta comandos de un string o archivo.
+
+Builtins: Comandos incorporados dentro del shell imposibles de hacer de otra forma porque modifican el shell en si, no es un ejecutable en otro sitio.
+-cd
+-break
+-continue
+-exec
+-history
+-getopts
+-kill
+-pwd
+
+Capitulo 2
+
+blank: ' ' o '\t'
+whitespace: Devuelve 1 de isspace()
+Control operator: '\n','||’, ‘&&’, ‘&’, ‘;’, ‘;;’, ‘;&’, ‘;;&’, ‘|’, ‘|&’, ‘(’, or ‘)’
+Exit status: valor que devuelve un comando al que lo llama va de 0 a 255
+Metacharacter: ' ', '\t', '\n', ‘|’, ‘&’, ‘;’, ‘(’, ‘)’, ‘<’, or ‘>’
+Filename: String que identifica un archivo.
+Palabra reservada: Palabra que tiene un significado especial para shell, como estructuras de control.
+Senyal: La forma en la que se notifica al kernel de un evento del sistema.
+
+Capitulo 3
+
+

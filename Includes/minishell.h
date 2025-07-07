@@ -9,4 +9,9 @@
 
 //Definiciones de funciones del proyecto
 
+//Comprovadores de definiciones
+int	ft_isblank(int c);
+int	ft_ismeta(int c);
+int	ft_isspace(int c);
+
 #endif
