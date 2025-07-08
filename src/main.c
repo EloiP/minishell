@@ -6,11 +6,14 @@ int main(int argc, char **argv, char **env)
 {
 	if (argc == 1)
 	{
-		Interactive();
+		enver(env);
+		argv[0][0] = ' ';
+	//	Interactive();
 	}
 	if (argc >= 1)
 	{
-		NonInteractive();
+		argc = 2;
+		//NonInteractive();
 	}
 	return (0);
 }
