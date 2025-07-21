@@ -1,3 +1,5 @@
+ANSI -c quoting no es necesario de hacer.
+
 Capitulo 1
 
 Shell es tanto un interpretador de comandos como un idioma de programacion.
@@ -34,5 +36,98 @@ Palabra reservada: Palabra que tiene un significado especial para shell, como es
 Senyal: La forma en la que se notifica al kernel de un evento del sistema.
 
 Capitulo 3
+
+Shell builfing blocks: commands, control structures, shell functions, shell parameters, shell expansions, redirections.
+Shell ignora desde # hasta el siguiente \n.
+El resto lo divide en palabras y operadores.
+
+The shell then parses these tokens into commands and other constructs, removes the special meaning of certain words or characters, expands others, redirects input and output as needed, executes the specified command, waits for the command’s exit status, and makes that exit status available for further inspection or processing.
+
+1- Parsea los tokens
+2- elimina significado especial
+3- expande significado especial
+4- redirecciona input y output
+5- ejecuta comando
+6- espera exit status de comando
+7- hace el exit status disponible para inspeccion o proceso
+
+Operaciones de shell:
+Reads its input from a file (see Shell Scripts), from a string supplied as an argument to the -c invocation option (see Invoking Bash), or from the user’s terminal.
+Breaks the input into words and operators, obeying the quoting rules described in Quoting. These tokens are separated by metacharacters. This step performs alias expansion (see Aliases).
+Parses the tokens into simple and compound commands (see Shell Commands).
+Performs the various shell expansions (see Shell Expansions), breaking the expanded tokens into lists of filenames (see Filename Expansion) and commands and arguments.
+Performs any necessary redirections (see Redirections) and removes the redirection operators and their operands from the argument list.
+Executes the command (see Executing Commands).
+Optionally waits for the command to complete and collects its exit status (see Exit Status).
+
+3.1 Citaciones
+
+\:Guarda el valor literal del siguiente char, exceptuando \n
+':Guarda el valor literal de su interior, no puede usar ' dentro ni usando \
+":Guarda el valor literal de su interior, excepto $ ` \ y ! si hay expansion history y no es POSIX mode \ solo se considera asi si continua con \ " $ ` som  eliminados, los que preceden caracteres sin significado especial no son modificados, \" es ", * y @ tienen significado de expansion distinto.
+$:expande la variable de nombre lo que tiene detras.
+#: Ignora todo lo que le sigue hasta llegar a un \n
+
+3.2 Comandos
+
+Primero dice el comando despues argumentos separados por un espacio.
+comando argumento1 argumento2
+
+Palabras reservadas: Se consideran reservadas cuando sin citacion y primera palabra de un comando.
+if
+then
+elif
+else
+fi
+time
+for
+in: Solo si es la tercera palabra en un for o tercera palabra en case o select
+until
+while
+do: Solo si es el tercer palabra en un for
+done
+case
+esac
+coproc
+select
+function
+{
+}
+[[
+]]
+!
+
+Comandos simples: Secuencia de palabras separadas por blank terminada or un operador de control.
+devuelve un exit status, la primera suele ser un comando y el resto sus argumentos.
+
+Pipelines:Uno o mas comandos separados por la estructura de control | o |&
+El output de cada comando se redirecciona al input del siguiente comando, |& conecta ademas tambien el estandard error en caso de fallo, si pones la palabra reservada time antes imprime el tiempo de ejecucion.
+
+
+Lista de comandos:
+
+Comandos compuestos:
+
+Loops:
+
+Condicionales:
+
+Agrupaciones:
+
+Coprocesos:
+
+Bash no puede hacer procesos paralelos, pero GNU Parallel si
+
+3.3 Funciones shell
+
+3.4 Parametros shell
+
+3.5 Expansiones de shell
+
+3.6 Redirecciones
+
+3.7 Ejecuciones de comandos
+
+3.8 Shell scripts
 
 
