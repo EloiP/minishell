@@ -103,18 +103,47 @@ devuelve un exit status, la primera suele ser un comando y el resto sus argument
 Pipelines:Uno o mas comandos separados por la estructura de control | o |&
 El output de cada comando se redirecciona al input del siguiente comando, |& conecta ademas tambien el estandard error en caso de fallo, si pones la palabra reservada time antes imprime el tiempo de ejecucion.
 
+No confundir time palabra reservada con times, builtin program.
+TIMEFORMAT es la variable que especifica como funciona eso.
+El exit status de una pipeline es el exit estatus del ultimo comando ejecutado.
+PELIGRO, No entiendo esto: si ! precede una pipeline, el exit status se invierte.
 
 Lista de comandos:
+Secuencia de varias pipelines separadas por ';' '&' '&&' o '||' y opcionalmente terminadas por un unico ';' o '&' o '\n'
+Precedencia: '&&' y '||' despues van ';' y '&'
+
+La preferencia es del comando de la izquierda
+;: Espera a que acabe el primer comando para ejecutar el segundo.
+Terminado con &: Ejecuta el comando de forma asincrona en una subshell, el retorno siempre sera 0 se redirecciona a /dev/null si no es especificado
+&&: el siguiente se ejecuta solo si el anterior es exito (0)
+||: el siguiente se ejecuta solo si el anterior es fracaso (!0)
 
 Comandos compuestos:
+Empiezan por palabras reservadas o control operators y terminan por su correspondiente palabra reservada o operator.
+Cualquier redireccion se aplica a TODO el compuesto.
 
 Loops:
 
+until
+while
+for
+
 Condicionales:
+
+if
+case
+select
+(())
+[[]]
 
 Agrupaciones:
 
+()
+{}
+
 Coprocesos:
+
+coproc
 
 Bash no puede hacer procesos paralelos, pero GNU Parallel si
 
