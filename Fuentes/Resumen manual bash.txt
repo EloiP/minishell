@@ -124,9 +124,12 @@ Cualquier redireccion se aplica a TODO el compuesto.
 
 Loops:
 
-until
-while
-for
+until a; do b; done
+ejecuta )b( mientras )a( devuelva algo que no sea zero, devuelve el ultimo exit status de )b( o 0 si ningun )b( ha sido ejecutado
+while a; do b; done
+ejecuta b mientras a devuelva 0, devuelve el ultimo exit status de b o 0 si ninguno fue ejecutado.
+for name [ [in words ...] ; ] do c; done
+expande words y ejecuta comandos por cada name que este en words,  si no esta in lo hace una vez por argumento, como si in "$@" hubiera sido el dato.
 
 Condicionales:
 
@@ -138,20 +141,57 @@ select
 
 Agrupaciones:
 
+Pueden redirijir todo el output o el input a la vez.
 ()
+Fuerza una subshell, asi que los environments desaparecen una vez la subshell se resuelve.
+Son palabras reservadas, es necesario separar con blanks
 {}
+No crea una subshell, son operadores, funciona inclusio si no se separan por espacios
 
 Coprocesos:
-
-coproc
+Establecen una pipe de doble sentido, como si el comando terminara en &
+coproc NOMBRE comando REDIRECCIONES
+crea un coproceso llamado NOMBRE en la variable de shell NOMBRE, si no existe usa COPROC
 
 Bash no puede hacer procesos paralelos, pero GNU Parallel si
 
 3.3 Funciones shell
+Se ejecutan como un comando simple, en el mismo proceso, ejecuta la lista de comandos asociados al nombre de la funcion.
+se declaran
+fname () cc [ redirecciones ]
+o
+function fname [()] cc [ redirecciones ]
+cc es el cuerpo de la funcion
+nombre de la funcion no puede tener $ ni ser palabra reservada
+
+FALTA MUCHO MAS, DA PEREZA
 
 3.4 Parametros shell
+Entidad que guarda valores
+Variable:Parametro con un nombre, tiene un valor y 0 o mas atributos.
+si no asignas valor es el null string
+todos los valores pasan por tilde expansion, parameter and variable expansion, command substitution, arithmetic expansion, and quote removal.
+los valores con el atributo integer pasado son evaluados aritmeticamente incluso si $((...))expansion no se usa.
+Separacion de palabras y expansion de nombre de archivo no se realizan.
+Assignment statements may also appear as arguments to the alias, declare, typeset, export, readonly, and local builtin commands (declaration commands).
+name=[value]
+Atributo:Se asignan usando declare, export y readonly dan atributos concretos.
+unset sirve para eliminar una variable.
+
+FALTAN COSAS.
 
 3.5 Expansiones de shell
+
+Se hacen en el orden que esta escrito, siendo brace el primero y quote removal el ultimo.
+brace
+tilde
+parameter
+variable
+arithmetic
+command substitution
+word splitting
+filename
+quote removal
 
 3.6 Redirecciones
 
