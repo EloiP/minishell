@@ -195,8 +195,46 @@ quote removal
 
 3.6 Redirecciones
 
+Antes de ejecutar un comando, se puede redirigir el input y output con una noacion especial.
+Esto permite: Duplicar, abrir, cerrar, referir distintos archivos, cmbiar desde donde lee o escribe el comando.
+
+Each redirection that may be preceded by a file descriptor number may instead be preceded by a word of the form {varname}. In this case, for each redirection operator except >&- and <&-, the shell allocates a file descriptor greater than or equal to 10 and assigns it to {varname}. If {varname} precedes >&- or <&-, the value of varname defines the file descriptor to close. If {varname} is supplied, the redirection persists beyond the scope of the command, which allows the shell programmer to manage the file descriptor’s lifetime manually without using the exec builtin. The varredir_close shell option manages this behavior
+
+Si saltas el < o > es el stdin y stdout por defecto.
+La palabra del redireccion es sujeta a expansiones habituales, si expande a mas de una palabra da error.
+Orden de redirecciones es importante.
+Un fallo de abrir o crear un archivo hace que la redireccion falle.
+Redirecciones de fd>9 se deben hacer con cuidado ya que pueden intercceder con fd que el shell use internamente.
+
+Special filenames: Si el OS iene eestos archivos los usa, si no, los simula internamente.
+/dev/fd/fd -> If fd is a valid integer, duplicate file descriptor fd.
+/dev/stdin -> File descriptor 0 is duplicated.
+/dev/stdout -> File descriptor 1 is duplicated.
+/dev/stderr -> File descriptor 2 is duplicated.
+/dev/tcp/host/port -> If host is a valid hostname or Internet address, and port is an integer port number or service name, Bash attempts to open the corresponding TCP socket.
+/dev/udp/host/port -> If host is a valid hostname or Internet address, and port is an integer port number or service name, Bash attempts to open the corresponding UDP socket.
+
+Redirigir input: En caso de que palabra no sea especificada es fd0(stdin)
+[n]<palabra
+Redirigir output: En caso de palabra no especificada  es fd1 si no existe se crea, si existe se trunca a tamanyo 0, >| itenta redirigir incluso si el archivo existe.
+[n]>[|]palabra
+Anexando output redirrigido: Igual que redirigir output sin truncar.
+[n]>>palabra
+Redirigir stdout y stderror: Redirigi ambos al filename de palabra, en la forma 2 no debe exxpandir a numero o - por compatibilidad.
+&>palabra
+>&palabra
+>palabra 2>&1
+Anexando stdout y stderror:
+&>>palabra
+>>palabra>&1
+Here docs
+Here strings
+Duplicando fd
+Moviendo fd
+Abriendo fd modo rw
+
+FALTAN COSAS
+
 3.7 Ejecuciones de comandos
 
 3.8 Shell scripts
-
-

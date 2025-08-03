@@ -3,7 +3,19 @@ Our own terminal 42 project.
 
 # TO DO
 
-##Subject
+## Organizacion
+Tokenizacion
+- [ ] Parseo de token
+- [ ] Elimina significado especial
+- [ ] Expande significado especial
+- [ ] Shell expansion
+- [ ] Redireccion
+Ejecucion
+- [ ] Ejecutar comando
+- [ ] Interpretar operadores
+- [ ] Espera exit status de comando
+- [ ] Hace exit statuss disponible para inspeccion o proceso
+## Subject
 - [ ] Entrada
 - [ ] Historial
 - [ ] Global de la senyal
@@ -94,3 +106,20 @@ Son funciones que comprueban y devuelven booleanos.
 - tgetstr
 - tgoto
 - tputs
+
+# Comandos utiles
+
+```ls -l /proc/$$/fd
+```
+Sirve para ver todos los filedescriptors abiertos en un momento.
+# Errores habituales
+
+En lugar de usar el infile y outfile, usa el infile y un temporal que despues escribas en el outfile para evitar errores en el caso de que el infile sea igual que el outfile.
+
+No poner 42headers hasta terminar el proyecto.
+
+Hacer una carpeta para las cosas que sirven para ambas
+
+> file echo "hola" << start > file1 | echo "adios" << end > file2
+
+Hacer un .h por persona y uno de librerias para evitar merge conflict.
