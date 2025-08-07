@@ -228,6 +228,7 @@ Anexando stdout y stderror:
 &>>palabra
 >>palabra>&1
 Here docs
+Lee el documento hasta un delimitador especifico
 Here strings
 Duplicando fd
 Moviendo fd
@@ -238,3 +239,45 @@ FALTAN COSAS
 3.7 Ejecuciones de comandos
 
 3.8 Shell scripts
+
+4 Builtins
+
+4.1 Shell
+
+4.2 Bash
+
+4.3 Modificar shell
+
+4.4 Special builtins
+
+5 Shell variables
+5.1 Bosh
+5.2 Bash
+
+6 Bash features
+6.1
+6.2
+6.3
+6.4 Bash conditionals
+6.5 Shell aritmetic
+6.6 Aliases
+6.7 Arrays
+6.8 Directory stack
+6.9 Controlling prompt
+6.10 Restricted shell
+6.11 POSIX
+6.12 Shell compatibility mode
+
+7 Job control
+7.1 Basics
+7.2 Builtins
+7.3 Variables
+
+8 Command line editing
+8.2 Readline interaction
+8.3 Readline init file
+8.4 Bindable readline commands
+8.5 Readline vi mode
+8.6 Programable completion
+
+9 History
