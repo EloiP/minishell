@@ -107,6 +107,8 @@ Son funciones que comprueban y devuelven booleanos.
 - tgoto
 - tputs
 
+[Explicacion de cada funcion y su cabecera](https://42-cursus.gitbook.io/guide/3-rank-03/minishell/functions)
+
 # Comandos utiles
 
 ```ls -l /proc/$$/fd
