@@ -1,9 +1,9 @@
 # Executable name
-NAME = example
+NAME = minishell
 CC = gcc
 
 # Compiler flags
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -MMD -MP		# Estass flags son importantes
 BFLAGS = -g -fsanitize=address
 
 #Libs
@@ -21,7 +21,7 @@ DEPS_DIR = deps
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES = $(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 DEP_FILES = $(SRC_FILES:$(SRC_DIR)/%.c=$(DEPS_DIR)/%.d)
-CLIB = .a
+CLIB = .a		# Esto no esta de mas?
 
 # Rules
 all: $(NAME)
@@ -49,7 +49,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c makefile
 norm:
 	norminette $(Includes) $(SRC_DIR)# $(LIBFT_DIR)
 
-mem:
+mem:	# por que tiene valgrind si en las flags esta sanitizer?
 	valgrind --track-origins=yes --show-leak-kinds=all --leakcheck=full ./$(NAME)
 
 clean:
