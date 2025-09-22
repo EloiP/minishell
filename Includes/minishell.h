@@ -3,8 +3,6 @@
 
 //Header del proyecto
 
-//Includes de las librerias que aparecen en el readme
-#include <stdio.h>
 //Definiciones de estructuras de datos y typedefs utilizados
 
 //Definiciones de funciones del proyecto
@@ -16,4 +14,14 @@ int	ft_isspace(int c);
 
 //Builtins
 void	enver(char**environ);
+
+//Pipex
+typedef signed int	t_pid;
+char	*getenvar(char *name, char **env);
+void	cierra(int in, int out);
+void	finish(int error);
+void	ft_free_pointstring(char **tab);
+void	doblefree(char **a, char **b);
+int		checkacces(char **s_cmd, char **allpath, char **exec);
+int		notempty(char **a, char **b);
 #endif
