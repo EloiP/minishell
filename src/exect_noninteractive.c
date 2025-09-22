@@ -1,0 +1,4 @@
+void	non_interactive()
+{
+	
+}
