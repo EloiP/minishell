@@ -19,6 +19,7 @@
 # include "libft.h"
 
 //Definiciones de estructuras de datos y typedefs utilizados
+# define PROMT ">>> shelly: "
 
 // Macros
 # define	TRUE 1
