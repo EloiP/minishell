@@ -9,6 +9,7 @@
 [Tokenrove](https://github.com/tokenrove/build-your-own-shell)
 [Danish](https://danishpraka.sh/posts/write-a-shell/)
 
+[Senyales](https://persoal.citius.usc.es/tf.pena/ASR/Tema_3html/node3.html)
 
 TOKENIZACION: romper un string por partes y las tratas por categorias (llena un struct)
 EJECUCION: Interpreta los tokens creados (Consume la estructura)
