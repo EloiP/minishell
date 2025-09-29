@@ -1,4 +1,0 @@
-void	non_interactive()
-{
-	
-}

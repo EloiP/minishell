@@ -13,6 +13,8 @@ builtin command, bash reads and executes commands from the file ~/.bash_logout, 
 	SIGQUIT (3): salida de teclado (Ctrl-\)
 */
 
+#include "../Includes/minishell.h"
+
 void	exect_interactive(t_data *data)
 {
 	struct sigaction	act;

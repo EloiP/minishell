@@ -1,4 +1,4 @@
-#include "minishell.h"
+#include "../Includes/minishell.h"
 
 int	is_controlop(const char *str)
 {

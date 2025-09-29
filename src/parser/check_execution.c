@@ -1,4 +1,4 @@
-#include "minishell.h"
+#include "../Includes/minishell.h"
 
 int	check_execution(t_data *data, int argc, char **argv)
 {

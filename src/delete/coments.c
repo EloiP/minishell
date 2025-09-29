@@ -1,3 +1,5 @@
+#include "../Includes/minishell.h"
+
 //Se salta los comentarios y devuelve el string de post comentario.
 char	*comentjump(char *str)
 {

@@ -1,4 +1,4 @@
-#include "minishell.h"
+#include "../Includes/minishell.h"
 
 void	enver(char**environ)
 {

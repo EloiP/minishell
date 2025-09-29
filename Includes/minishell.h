@@ -16,7 +16,7 @@
 # include <dirent.h>
 # include <termios.h>
 # include <termcap.h>
-# include "libft.h"
+# include "../libft/Includes/libft.h"
 
 // Macros
 # define	TRUE 1
@@ -26,23 +26,34 @@
 typedef struct	s_data
 {
 	int			is_interactive;
-	t_token		*token;
+//	t_token		*token;
 	char		*user_input;
 	char		**env;
 	char		*working_dir;
 	char		*old_working_dir;
-	t_command	*cmd;
+//	t_command	*cmd;
 	pid_t		pid;
 }	t_data;
 
 //Definiciones de funciones del proyecto
 
-//Comprovadores de definiciones
+// Comprovadores de definiciones
 int	ft_isblank(int c);
 int	ft_ismeta(int c);
+int	is_controlop(const char *str);
 int	ft_isspace(int c);
+int	is_filename(const char *s);
+int	is_redop(const char *str);
+int	is_token(const char *str);
+int	is_word(const char *s);
+
+int	check_execution(t_data *data, int argc, char **argv);
+void	exect_interactive(t_data *data);
+void	exect_noninteractive(t_data *data);
+void	reset_prompt(int signo);
 
 //Builtins
 void	enver(char**environ);
 
+void	exit_shelly();
 #endif
