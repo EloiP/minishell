@@ -122,9 +122,15 @@ Son funciones que comprueban y devuelven booleanos.
 
 # Comandos utiles
 
-```ls -l /proc/$$/fd
-```
-Sirve para ver todos los filedescriptors abiertos en un momento.
+## Bash
+ls -l /proc/$$/fd : Sirve para ver todos los filedescriptors abiertos en un momento.
+## Git
+git checkout 'rama' : Cambia de rama
+git pull : Recoje cambios 
+git log : Dice los comits realizados
+git reset 'id comit' : Deshace todo lo de despues de ese comit
+git merge 'rama' : Une la rama a este checkout.
+
 # Errores habituales
 
 En lugar de usar el infile y outfile, usa el infile y un temporal que despues escribas en el outfile para evitar errores en el caso de que el infile sea igual que el outfile.

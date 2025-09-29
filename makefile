@@ -1,9 +1,9 @@
 # Executable name
 NAME = minishell
-CC = gcc
+CC = cc
 
 # Compiler flags
-CFLAGS = -Wall -Werror -Wextra -MMD -MP		# Estass flags son importantes
+CFLAGS = -Wall -Werror -Wextra -MD -MP		# Estass flags son importantes
 BFLAGS = -g -fsanitize=address
 
 #Libs
