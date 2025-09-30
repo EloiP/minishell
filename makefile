@@ -3,12 +3,11 @@ NAME = minishell
 CC = cc
 
 # Compiler flags
-CFLAGS = -Wall -Werror -Wextra -MD -MP		# Estass flags son importantes
+CFLAGS = -Wall -Werror -Wextra -MD -MP# Estass flags son importantes
 BFLAGS = -g -fsanitize=address
 
 #Libs
 LIBFT_DIR = libft
-CLIB = .a
 
 # Directories
 SRC_DIR = src
@@ -21,7 +20,7 @@ DEPS_DIR = deps
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES = $(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 DEP_FILES = $(SRC_FILES:$(SRC_DIR)/%.c=$(DEPS_DIR)/%.d)
-CLIB = .a		# Esto no esta de mas?
+CLIB = .a#Determina tipo de libreria para si windows o linux
 
 # Rules
 all: $(NAME)

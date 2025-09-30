@@ -11,7 +11,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/wait.h>
-//# include "libft.h"
+# include "libft.h"
 
 // Terminal y entorno
 # include <termios.h>
