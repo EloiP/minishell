@@ -15,37 +15,44 @@ builtin command, bash reads and executes commands from the file ~/.bash_logout, 
 
 #include "../Includes/minishell.h"
 
-void	exect_interactive(t_data *data)
+// esta funcion definitivamente hay que cortarla :p
+void    exect_interactive(t_data *data)
 {
-	struct sigaction	act;
-	
-	ft_memset(&act, 0, sizeof(act));
-	// ignora el (ctrl-\)
+    struct sigaction    act;
+    
+    while (1)
+    {
+        ft_memset(&act, 0, sizeof(act));
+        
 	act.sa_handler = SIG_IGN;
-	sigaction(SIGQUIT, &act, NULL);
-	// resetear el prompt. Este handler ha de estar activo antes de readline
+        sigaction(SIGQUIT, &act, NULL);
+        
 	act.sa_handler = &reset_prompt;
-	sigaction(SIGINT, &act, NULL);
-	// guardar el input
-	data->user_input = readline(PROMPT);
-	if (data->user_input == NULL)
-	{
-		// TRUE ha de forzar la liberacion total
-		free_data(data, TRUE);
-		exit(0);
-	}
-	// ctrl-\ y ctrl-c
-	act.sa_handler = &signal_print_newline;
-	sigaction(SIGINT, &act, NULL);
-	sigaction(SIGQUIT, &act, NULL);
-	// si no esta vacio agregar al historial
-	if (*data->user_input && data->user_input)
-		add_history(data->user_input);
-	if (parse_input(data) == TRUE)
-		g_status = execute(data);
-	else
-		g_status = 1;
-	free_data(data, FALSE);
+        sigaction(SIGINT, &act, NULL);
+        
+        data->user_input = readline(PROMPT);
+        if (data->user_input == NULL)
+        {
+            ft_putstr_fd("mensaje bonito\n", STDOUT_FILENO);
+            free_data(data, TRUE); 
+            exit(g_status);
+        }
+
+        act.sa_handler = &signal_print_newline; 
+        sigaction(SIGINT, &act, NULL);
+        sigaction(SIGQUIT, &act, NULL);
+
+        if (*data->user_input)
+            add_history(data->user_input);
+        if (parse_input(data) == TRUE)
+            g_status = execute(data);
+        else
+            g_status = 1; // Error de sintaxis o parsing
+
+        // libera los recursos temporales (tokens, lista de comandos)
+        free_data(data, FALSE); 
+        // readline debe ser liberado en free_data(data, FALSE)
+    }
 }
 
 // handler function :p
