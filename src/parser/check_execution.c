@@ -3,9 +3,9 @@
 int	check_execution(t_data *data, int argc, char **argv)
 {
 	if (argc == 1)
-		data.interactive = 1;
-	else if (argc == 3)
-		data.interactive = 0;
+		data->interactive = 1;
+	else if (argc == 3)	// aqui se ha de controlar los -c y -s
+		data->interactive = 0;
 		// ahora se habrian de controlar las otras mariqueras
 	else
 	{
