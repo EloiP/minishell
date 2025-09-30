@@ -13,6 +13,18 @@ builtin command, bash reads and executes commands from the file ~/.bash_logout, 
 	SIGQUIT (3): salida de teclado (Ctrl-\)
 */
 
+#include "minishell.h"
+
+// handler function :p
+void	reset_prompt(int signo)
+{
+	(void)signo;
+	write (1, "\n", 1);
+	rl_on_new_line();
+	rl_replace_line("");
+	rl_display();
+}
+
 void	exect_interactive(t_data *data)
 {
 	struct sigaction	act;
@@ -46,12 +58,3 @@ void	exect_interactive(t_data *data)
 	free_data(data, FALSE);
 }
 
-// handler function :p
-void	reset_prompt(int signo)
-{
-	(void)signo;
-	write (1, "\n", 1);
-	rl_on_new_line();
-	rl_replace_line("");
-	rl_display();
-}

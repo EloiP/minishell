@@ -2,24 +2,10 @@
 # define MINISHELL_H
 
 // Includes
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <readline/readline.h>
-# include <readline/history.h>
-# include <sys/wait.h>
-# include <sys/stat.h>
-# include <sys/ioctl.h>
-# include <signal.h>
-# include <dirent.h>
-# include <termios.h>
-# include <termcap.h>
-# include "libft.h"
+# include "includes.h"
 
 //Definiciones de estructuras de datos y typedefs utilizados
-# define PROMT ">>> shelly: "
+# define PROMPT ">>> shelly: "
 
 // Macros
 # define	TRUE 1
