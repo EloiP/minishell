@@ -11,5 +11,7 @@
 
 [Senyales](https://persoal.citius.usc.es/tf.pena/ASR/Tema_3html/node3.html)
 
+[Git book](https://42-cursus.gitbook.io/guide/3-rank-03/minishell)
+
 TOKENIZACION: romper un string por partes y las tratas por categorias (llena un struct)
 EJECUCION: Interpreta los tokens creados (Consume la estructura)
