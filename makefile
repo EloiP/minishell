@@ -17,7 +17,7 @@ INC_DIR = Includes
 DEPS_DIR = deps
 
 # Source files
-SRC_FILES = $(wildcard $(SRC_DIR)/*/*.c)
+SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES = $(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 DEP_FILES = $(SRC_FILES:$(SRC_DIR)/%.c=$(DEPS_DIR)/%.d)
 CLIB = .a #Determina tipo de libreria para si windows o linux
@@ -26,7 +26,7 @@ CLIB = .a #Determina tipo de libreria para si windows o linux
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES) $(LIB_DIR)/$(LIBFT_DIR)$(CLIB)
-	$(CC) $(CFLAGS) -o $@ $^ -I $(INC_DIR) #-l:$(LIBFT_DIR)$(CLIB)
+	$(CC) $(CFLAGS) -o $@ $^ -I $(INC_DIR) -l:$(LIBFT_DIR)$(CLIB)
 
 $(LIB_DIR)/$(LIBFT_DIR)$(CLIB):
 	@make -C $(LIBFT_DIR) # Compile libft library
