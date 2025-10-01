@@ -13,7 +13,49 @@ builtin command, bash reads and executes commands from the file ~/.bash_logout, 
 	SIGQUIT (3): salida de teclado (Ctrl-\)
 */
 
-#include "minishell.h"
+// #include "minishell.h"
+
+# include <unistd.h>
+# include <fcntl.h>
+# include <string.h>
+# include <errno.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <sys/wait.h>
+
+// Terminal y entorno
+# include <termios.h>
+# include <sys/ioctl.h>
+# include <termcap.h>
+
+// Archivos y directorios
+# include <dirent.h>
+# include <sys/stat.h>
+
+// Senyales
+
+# include <signal.h>
+
+// Readline
+
+# include <readline/readline.h>
+# include <readline/history.h>
+
+typedef struct	s_data
+{
+	int			is_interactive;
+//	t_token		*token;
+	char		*user_input;
+	char		**env;
+	char		*working_dir;
+	char		*old_working_dir;
+//	t_command	*cmd;
+	pid_t		pid;
+}	t_data;
+
+
+void	reset_prompt(int signo);
+void	exect_interactive(t_data *data);
 
 // handler function :p
 void	reset_prompt(int signo)
@@ -51,4 +93,3 @@ void	exect_interactive(t_data *data)
 		g_status = 1;
 	free_data(data, FALSE);
 }
-

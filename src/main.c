@@ -12,6 +12,6 @@ int main(int argc, char **argv, char **env)
 		exect_interactive(&data);
 	else
 		exect_noninteractive(&data, argc, argv);//temporal, hasta que rellenemos el data en checkexecution
-	exit_shelly(&data);
+//	exit_shelly(&data);
 	return (0);
 }
