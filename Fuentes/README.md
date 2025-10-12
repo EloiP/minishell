@@ -13,5 +13,7 @@
 
 [Git book](https://42-cursus.gitbook.io/guide/3-rank-03/minishell)
 
+[POSIX](https://pubs.opengroup.org/onlinepubs/9699919799/)
+
 TOKENIZACION: romper un string por partes y las tratas por categorias (llena un struct)
 EJECUCION: Interpreta los tokens creados (Consume la estructura)
