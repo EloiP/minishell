@@ -6,7 +6,7 @@ int	main()
 	print_msg("test", EXIT_FAILURE);
 	print_msg("test", MESSAGE);
 
-	printf("%stest%s\n", BLACK, RESET);
+	printf("%s%stest%s\n", BLACK, BG_MAGENTA, RESET);
 	printf("%stest%s\n", RED, RESET);
 	printf("%stest%s\n", GREEN, RESET);
 	printf("%stest%s\n", YELLOW, RESET);
