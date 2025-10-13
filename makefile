@@ -5,6 +5,7 @@ CC = cc
 # Compiler flags
 CFLAGS = -Wall -Werror -Wextra -MD -MP# Estass flags son importantes
 BFLAGS = -g -fsanitize=address
+RDFLAG = -lreadline
 
 #Libs
 LIBFT_DIR = libft
