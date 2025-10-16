@@ -3,6 +3,7 @@
 
 // Includes
 # include "includes.h"
+# include "colors.h"
 
 //Definiciones de estructuras de datos y typedefs utilizados
 # define PROMPT ">>> shelly: "
@@ -13,6 +14,9 @@
 
 // deberia ponerlo volatile sigatomic??
 int	g_status;
+
+// definir mensajes de error
+# define INPUT_FAILED "ponermensajeaqui"
 
 // Data structures
 typedef struct	s_data
