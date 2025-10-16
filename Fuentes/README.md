@@ -15,5 +15,7 @@
 
 [POSIX](https://pubs.opengroup.org/onlinepubs/9699919799/)
 
+[Pipes y signals. TUTORIAL DE COMO MATAR A TU PROPIO HIJO](https://medium.com/@zouhairlrs/minishell-building-a-mini-bash-a-42-project-5dc20d671fbb)
+
 TOKENIZACION: romper un string por partes y las tratas por categorias (llena un struct)
 EJECUCION: Interpreta los tokens creados (Consume la estructura)
