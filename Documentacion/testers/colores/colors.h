@@ -1,6 +1,10 @@
 #ifndef COLORS_H
 #define COLORS_H
 
+// borrar los que no acaben siendo necesarios
+
+#define MESSAGE -1
+
 #define BLACK   "\x1B[30m"
 #define RED     "\x1b[31m"
 #define GREEN   "\x1b[32m"
@@ -10,7 +14,6 @@
 #define CYAN    "\x1b[36m"
 #define WHITE   "\x1B[37m"
 
-// Para modificar el RGB
 // \x1B[38;2;R;G;Bm
 
 #define ORANGE  "\x1B[38;2;255;128;0m"
@@ -29,7 +32,11 @@
 #define BG_CYAN    "\x1B[46m"
 #define BG_WHITE   "\x1B[47m"
 
-// Para modificar el RGB de fondo
-// \x1B[48;2;R;G;Bm
+/*\x1B[48;2;R;G;Bm*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void    print_msg(char *msg, int exit);
 
 #endif

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   femtoshell.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: epascual <epascual@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/16 12:52:04 by epascual          #+#    #+#             */
-/*   Updated: 2025/07/07 21:31:03 by epascual         ###   ########.fr       */
+/*   Created: 2025/10/28 15:10:32 by epascual          #+#    #+#             */
+/*   Updated: 2025/10/28 15:11:00 by epascual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include <unistd.h>
 
-int	ft_isspace(int c)
+int	main(int c, char **argv, char **env)
 {
-	if (c == ' ' || c == '\n' || c == '\t' || c == '\v' \
-	|| c == '\f' || c == '\r')
-	{
-		return (1);
-	}
+	c = 0;
+	argv = 0;
+	execve("/bin/bash", argv, env);
 	return (0);
 }
