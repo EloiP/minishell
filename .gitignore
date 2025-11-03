@@ -10,8 +10,5 @@
 # Libraries
 *.a
 
-# Executables
-minishell
-
 #bin files
 bin/
