@@ -14,8 +14,13 @@
 [Git book](https://42-cursus.gitbook.io/guide/3-rank-03/minishell)
 
 [POSIX](https://pubs.opengroup.org/onlinepubs/9699919799/)
+[POSIX](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html)
 
 [Pipes y signals. TUTORIAL DE COMO MATAR A TU PROPIO HIJO](https://medium.com/@zouhairlrs/minishell-building-a-mini-bash-a-42-project-5dc20d671fbb)
 
 TOKENIZACION: romper un string por partes y las tratas por categorias (llena un struct)
 EJECUCION: Interpreta los tokens creados (Consume la estructura)
+
+### Diferencias entre bash y zsh
+1: echo \\n
+2: exit a
